@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srinivasan Ravichandran — Front-End Developer</title>
+    <meta name="description" content="Front-End Developer specializing in WordPress & WooCommerce. 35+ responsive websites shipped, 40% faster load times.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS (scroll animations) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- NOTE: Icons are inline SVG (embedded in this file below) — no icon-font CDN required, so they always render even if a CDN is blocked. -->
+    <link rel="stylesheet" href="assets/style.css">
+
+</head>
+
+<body>
+
+    <!-- ============ SVG ICON SPRITE (no external CDN needed) ============ -->
+    <svg style="display:none" aria-hidden="true">
+        <symbol id="icon-menu" viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+        </symbol>
+        <symbol id="icon-arrow-up-right" viewBox="0 0 24 24">
+            <path d="M7 17L17 7M7 7h10v10" />
+        </symbol>
+        <symbol id="icon-arrow-up" viewBox="0 0 24 24">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </symbol>
+        <symbol id="icon-code" viewBox="0 0 24 24">
+            <path d="M8 6L2 12l6 6M16 6l6 6-6 6" />
+        </symbol>
+        <symbol id="icon-layout" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="8" height="8" rx="1.5" />
+            <rect x="13" y="3" width="8" height="8" rx="1.5" />
+            <rect x="3" y="13" width="8" height="8" rx="1.5" />
+            <rect x="13" y="13" width="8" height="8" rx="1.5" />
+        </symbol>
+        <symbol id="icon-gauge" viewBox="0 0 24 24">
+            <circle cx="12" cy="13" r="8" />
+            <line x1="12" y1="13" x2="15.5" y2="9.5" />
+            <line x1="12" y1="4" x2="12" y2="5.5" />
+        </symbol>
+        <symbol id="icon-tool" viewBox="0 0 24 24">
+            <circle cx="7" cy="7" r="3.2" />
+            <circle cx="17" cy="17" r="3.2" />
+            <line x1="9.3" y1="9.3" x2="14.7" y2="14.7" />
+        </symbol>
+        <symbol id="icon-home" viewBox="0 0 24 24">
+            <path d="M3 11.5L12 4l9 7.5" />
+            <path d="M5 10v10h14V10" />
+        </symbol>
+        <symbol id="icon-bag" viewBox="0 0 24 24">
+            <path d="M6 8h12l-1 12H7L6 8z" />
+            <path d="M9 8V6a3 3 0 016 0v2" />
+        </symbol>
+        <symbol id="icon-pin" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+            <circle cx="12" cy="10" r="3" />
+        </symbol>
+        <symbol id="icon-trending-up" viewBox="0 0 24 24">
+            <path d="M23 6l-9.5 9.5-5-5L1 18" />
+            <polyline points="17 6 23 6 23 12" />
+        </symbol>
+        <symbol id="icon-briefcase" viewBox="0 0 24 24">
+            <rect x="2" y="7" width="20" height="14" rx="2" />
+            <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+        </symbol>
+        <symbol id="icon-mail" viewBox="0 0 24 24">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <polyline points="22,6 12,13 2,6" />
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 24 24">
+            <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z" />
+        </symbol>
+        <symbol id="icon-send" viewBox="0 0 24 24">
+            <line x1="22" y1="2" x2="11" y2="13" />
+            <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+        </symbol>
+        <symbol id="icon-check-circle" viewBox="0 0 24 24">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+        </symbol>
+        <symbol id="icon-alert" viewBox="0 0 24 24">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+        </symbol>
+        <symbol id="icon-award" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="6" />
+            <path d="M8.2 13.5L6 22l6-3 6 3-2.2-8.5" />
+        </symbol>
+        <symbol id="icon-users" viewBox="0 0 24 24">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+            <path d="M16 3.13a4 4 0 010 7.75" />
+        </symbol>
+        <symbol id="icon-zap" viewBox="0 0 24 24">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        </symbol>
+        <symbol id="icon-shield" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            <polyline points="9 12 11 14 15 10" />
+        </symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+        </symbol>
+        <symbol id="icon-search" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </symbol>
+        <symbol id="icon-edit" viewBox="0 0 24 24">
+            <path d="M17 3a2.85 2.83 0 114 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
+        </symbol>
+        <symbol id="icon-rocket" viewBox="0 0 24 24">
+            <path d="M12 2c3 1 5 4 5 8 0 3-1.5 6-5 9-3.5-3-5-6-5-9 0-4 2-7 5-8z" />
+            <circle cx="12" cy="9" r="1.6" />
+            <path d="M8 17l-3 4M16 17l3 4" />
+        </symbol>
+        <symbol id="icon-github" viewBox="0 0 24 24" class="icon-filled">
+            <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+        </symbol>
+        <symbol id="icon-whatsapp" viewBox="0 0 24 24" class="icon-filled">
+            <path
+                d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.6 14.2c-.24.66-1.4 1.27-1.94 1.34-.5.07-1.1.1-1.77-.11a13 13 0 01-2.7-1.13 10.6 10.6 0 01-3.55-3.6c-.4-.6-.8-1.34-.9-2.1-.1-.75.14-1.4.5-1.86.2-.25.45-.36.68-.36h.5c.16 0 .38-.04.56.4.2.5.68 1.7.74 1.83.06.13.1.28.02.44-.08.16-.13.27-.26.4l-.36.42c-.12.13-.24.27-.1.53.14.26.62 1.03 1.34 1.67.92.82 1.7 1.08 1.97 1.2.27.13.43.11.6-.06.16-.17.68-.78.86-1.05.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.26.13.43.19.5.3.06.12.06.66-.18 1.32z" />
+        </symbol>
+        <symbol id="icon-book" viewBox="0 0 24 24">
+            <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+        </symbol>
+    </svg>
+
+    <!-- ================= NAV ================= -->
+    <nav class="navbar navbar-expand-lg navbar-custom" id="mainNav">
+        <div class="container">
+            <a class="brand-mark" href="#home"><span class="dot"></span>Srinivasan<span
+                    class="text-body-secondary">.dev</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" style="border:none;">
+                <svg class="icon" style="width:1.6rem;height:1.6rem;">
+                    <use href="#icon-menu" />
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                <ul class="navbar-nav align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#highlights">Why Me</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#journey">Journey</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#work">Work</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#gallery">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-custom" href="#connect">Connect</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn-nav-cta" href="#contact">Let's Talk</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+
+        <!-- ================= HERO / BANNER ================= -->
+        <header class="hero" id="home">
+            <div class="hero-blob blob1"></div>
+            <div class="hero-blob blob2"></div>
+            <div class="container position-relative">
+                <div class="row align-items-center gy-5">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <span class="eyebrow-chip"><span class="pulse-dot"></span>Available for new opportunities</span>
+                        <h1><span id="typedFirst"></span><span class="type-cursor" id="cursorA">|</span><br><span id="typedLast"></span><span class="type-cursor" id="cursorB" style="display:none;">|</span></h1>
+                        <div class="role-line">Front-End Developer — WordPress &amp; WooCommerce Specialist</div>
+                        <p class="lede">I build responsive, production-ready websites for real businesses — not portfolio pieces. 45+ live sites shipped across various industries, and career-services.
+                        </p>
+                        <div class="stat-row">
+                            <div class="stat-item">
+                                <div class="num">45+</div>
+                                <div class="lbl">Sites shipped</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="num">40%</div>
+                                <div class="lbl">Faster loads</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="num">100+</div>
+                                <div class="lbl">Products handled</div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center justify-content-lg-start gap-3 flex-wrap">
+                            <a href="#work" class="btn-hero-primary">View My Work</a>
+                            <a href="#contact" class="btn-hero-outline">Let's Talk</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+                        <div class="hero-card-wrap">
+                            <span class="code-float cf-1">&lt;/&gt; clean code</span>
+                            <span class="code-float cf-2">git push origin main</span>
+                            <span class="code-float cf-3">✓ build passing</span>
+                            <span class="code-float cf-4">40% faster ⚡</span>
+                            <div class="float-tag tag-1"><svg class="icon">
+                                    <use href="#icon-code" />
+                                </svg>HTML · CSS · JS</div>
+                            <div class="browser-card">
+                                <div class="browser-bar">
+                                    <span class="bdot" style="background:#FF5F57;"></span>
+                                    <span class="bdot" style="background:#FEBC2E;"></span>
+                                    <span class="bdot" style="background:#28C840;"></span>
+                                    <span class="url">srinivasan.dev</span>
+                                </div>
+                                <div class="avatar-wrap">
+                                    <div class="avatar-circle">SR</div>
+                                    <div class="avatar-name">Srinivasan R</div>
+                                    <div class="avatar-role">Coimbatore, India</div>
+                                    <span class="live-badge"><span class="pulse-dot"></span>OPEN TO RELOCATE</span>
+                                </div>
+                            </div>
+                            <div class="float-tag tag-2"><svg class="icon">
+                                    <use href="#icon-layout" />
+                                </svg>WordPress Expert</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about">
+            <div class="container">
+                <div class="row gy-5 align-items-start">
+
+                    <div class="col-lg-5 order-2 order-lg-1" data-aos="fade-up">
+                        <div class="about-card">
+                            <div class="about-avatar">SR</div>
+                        </div>
+                        <div class="row g-2 mt-1">
+                            <div class="col-6">
+                                <div class="info-pill"><svg class="icon">
+                                        <use href="#icon-briefcase" />
+                                    </svg>
+                                    <div>
+                                        <div class="k">Experience</div>
+                                        <div class="v">1.3+ Years</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="info-pill"><svg class="icon">
+                                        <use href="#icon-pin" />
+                                    </svg>
+                                    <div>
+                                        <div class="k">Based in</div>
+                                        <div class="v">Coimbatore, IN</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-7 order-1 order-2" data-aos="fade-up" data-aos-delay="100">
+                        <div class="section-eyebrow"><span class="eyebrow-num">01</span>About Me</div>
+                        <h2 class="section-title">I turn client requirements into fast, reliable websites.</h2>
+                        <p class="section-sub mb-3" style="max-width:100%;">
+                            I'm a Front-End Developer at Penta Techsoft Solutions, Coimbatore, where I build and customize WordPress and WooCommerce websites for real businesses. My work spans real estate platforms, e-commerce stores, and career-services sites — live, in production,
+                            serving real users today.
+                        </p>
+                        <p class="section-sub mb-4" style="max-width:100%;">
+                            I care about the details that clients feel but rarely name: page speed, mobile-first layouts, cross-browser consistency, and forms that actually work. I'm currently expanding into React.js and Tailwind CSS to build more component-driven interfaces.
+                        </p>
+                        <p style="border-left:3px solid var(--indigo); padding-left:16px; font-style:italic; font-weight:600; color:var(--ink); font-size:15px; margin-bottom:28px;">
+                            "A website isn't finished when it looks good — it's finished when it loads fast, works everywhere, and actually converts."
+                        </p>
+                        <div class="d-flex justify-content-center justify-content-lg-start gap-3 flex-wrap">
+                            <a href="#contact" class="btn-outline-ink">Get In Touch <svg class="icon">
+                                    <use href="#icon-arrow-up-right" />
+                                </svg></a>
+                            <a href="#journey" class="btn-outline-ink" style="border-color:var(--line); color:var(--slate);">My
+                                Journey
+                                <svg class="icon">
+                                    <use href="#icon-arrow-up-right" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= HIGHLIGHTS (new) ================= -->
+        <section id="highlights" style="background:#FDF2F4;">
+            <div class="container">
+                <div class="text-center mx-auto" style="max-width:600px;" data-aos="fade-up">
+                    <div class="section-eyebrow justify-content-center"><span class="eyebrow-num">03</span>The Short Version
+                    </div>
+                    <h2 class="section-title">Why Work With Me</h2>
+                    <p class="section-sub mx-auto">What I actually deliver, in numbers — not adjectives.</p>
+                </div>
+                <div class="row g-4 mt-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                        <div class="highlight-card">
+                            <div class="highlight-icon" style="background:linear-gradient(135deg,var(--indigo),var(--indigo-deep));">
+                                <svg class="icon">
+                                    <use href="#icon-zap" />
+                                </svg>
+                            </div>
+                            <h5>Zero Missed Deadlines</h5>
+                            <p>Every one of 35+ client sites delivered on schedule, from first brief to live launch.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="highlight-card">
+                            <div class="highlight-icon" style="background:linear-gradient(135deg,#22B39A,#0A9E78);"><svg class="icon">
+                                    <use href="#icon-trending-up" />
+                                </svg></div>
+                            <h5>40% Faster Load Times</h5>
+                            <p>Consistent Core Web Vitals gains through image, CSS, and JS optimization.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="highlight-card">
+                            <div class="highlight-icon" style="background:linear-gradient(135deg,#FFB703,#E08E00);"><svg class="icon">
+                                    <use href="#icon-shield" />
+                                </svg></div>
+                            <h5>Production, Not Prototypes</h5>
+                            <p>Every project ships live via cPanel/FTP and keeps serving real customers after handoff.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="highlight-card">
+                            <div class="highlight-icon" style="background:linear-gradient(135deg,#6C7688,#3E4657);"><svg class="icon">
+                                    <use href="#icon-users" />
+                                </svg></div>
+                            <h5>Client-First Communication</h5>
+                            <p>Requirements translated into working UI, with clear updates at every stage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= JOURNEY / TIMELINE (new) ================= -->
+        <section id="journey" style="background:#F5F7FC;">
+            <div class="container">
+                <div class="text-center mx-auto" style="max-width:600px;" data-aos="fade-up">
+                    <div class="section-eyebrow justify-content-center"><span class="eyebrow-num">02</span>My Journey
+                    </div>
+                    <h2 class="section-title">Education, Certification &amp; Experience</h2>
+                    <p class="section-sub mx-auto">The path that took me from a computer applications degree to shipping 35+ production websites.</p>
+                </div>
+
+                <div class="timeline mt-5">
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="0">
+                        <div class="timeline-dot"><svg class="icon">
+                                <use href="#icon-book" />
+                            </svg></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">2019 – 2022</div>
+                            <h5>B.C.A. — Computer Applications</h5>
+                            <div class="timeline-org">Urumu Dhanalakshmi College</div>
+                            <p class="timeline-desc">Built my foundation in programming logic and computer applications.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-dot"><svg class="icon">
+                                <use href="#icon-book" />
+                            </svg></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">2022 – 2024</div>
+                            <h5>M.Sc. — Information Technology</h5>
+                            <div class="timeline-org">Bishop Heber College</div>
+                            <p class="timeline-desc">Deepened my technical grounding in IT, ahead of moving into front-end development.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-dot"><svg class="icon">
+                                <use href="#icon-award" />
+                            </svg></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">Certification</div>
+                            <h5>Front-End Developer Course</h5>
+                            <div class="timeline-org">Jiametric Technologies, Coimbatore</div>
+                            <p class="timeline-desc">Hands-on training in HTML5, CSS3, JavaScript ES6, and responsive design practices.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item is-current" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-dot"><svg class="icon">
+                                <use href="#icon-briefcase" />
+                            </svg></div>
+                        <div class="timeline-card">
+                            <div class="timeline-date">April 2025 – Present <span class="timeline-badge">CURRENT</span>
+                            </div>
+                            <h5>Front-End Developer</h5>
+                            <div class="timeline-org">Penta Techsoft Solutions, Coimbatore</div>
+                            <p class="timeline-desc">Shipped 35+ responsive client websites across real estate, e-commerce, and career-services sectors — cutting average page load times by 40%.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SKILLS ================= -->
+        <section id="skills">
+            <div class="container">
+                <div class="text-center mx-auto" style="max-width:600px;" data-aos="fade-up">
+                    <div class="section-eyebrow justify-content-center"><span class="eyebrow-num">04</span>What I Work With
+                    </div>
+                    <h2 class="section-title">Skills &amp; Tools</h2>
+                    <p class="section-sub mx-auto">A focused stack built for shipping responsive websites quickly, without sacrificing performance.</p>
+                </div>
+                <div class="row g-4 mt-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                        <div class="skill-group">
+                            <div class="skill-editor-bar">
+                                <span class="edot" style="background:#FF5F57;"></span><span class="edot" style="background:#FEBC2E;"></span><span class="edot" style="background:#28C840;"></span>
+                                <span class="fname">core-frontend.js</span>
+                            </div>
+                            <div class="skill-body">
+                                <h5><span class="cmt">//</span> Core Frontend</h5>
+                                <div><span class="skill-chip">HTML5</span><span class="skill-chip">CSS3</span><span class="skill-chip">JavaScript ES6</span><span class="skill-chip">Bootstrap
+                                        5</span><span class="skill-chip">DOM Manipulation</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-group">
+                            <div class="skill-editor-bar">
+                                <span class="edot" style="background:#FF5F57;"></span><span class="edot" style="background:#FEBC2E;"></span><span class="edot" style="background:#28C840;"></span>
+                                <span class="fname">cms-ecommerce.php</span>
+                            </div>
+                            <div class="skill-body">
+                                <h5><span class="cmt">//</span> CMS &amp; E-commerce</h5>
+                                <div><span class="skill-chip">WordPress</span><span class="skill-chip">WooCommerce</span><span class="skill-chip">Elementor</span><span class="skill-chip">Custom CMS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-group">
+                            <div class="skill-editor-bar">
+                                <span class="edot" style="background:#FF5F57;"></span><span class="edot" style="background:#FEBC2E;"></span><span class="edot" style="background:#28C840;"></span>
+                                <span class="fname">optimize.css</span>
+                            </div>
+                            <div class="skill-body">
+                                <h5><span class="cmt">//</span> Optimization &amp; QA</h5>
+                                <div><span class="skill-chip">Page Speed</span> <span class="skill-chip">Core Web
+                                        Vitals</span> <span class="skill-chip">On Page SEO</span> <span class="skill-chip">Cross-Browser</span><span class="skill-chip">Responsive/Mobile-First</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-group">
+                            <div class="skill-editor-bar">
+                                <span class="edot" style="background:#FF5F57;"></span><span class="edot" style="background:#FEBC2E;"></span><span class="edot" style="background:#28C840;"></span>
+                                <span class="fname">workflow.sh</span>
+                            </div>
+                            <div class="skill-body">
+                                <h5><span class="cmt">//</span> Tools &amp; Workflow</h5>
+                                <div><span class="skill-chip">Git &amp; GitHub</span><span class="skill-chip">VS
+                                        Code</span><span class="skill-chip">DevTools</span><span class="skill-chip">Photoshop</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4" data-aos="fade-up">
+                    <span class="chip-tag learning"><svg class="icon" style="width:15px;height:15px;">
+                            <use href="#icon-arrow-up" />
+                        </svg> Currently leveling up: React.js, Tailwind CSS</span>
+                    <!-- <span class="chip-tag learning"><svg class="icon" style="width:.85em;height:.85em;">
+                            <use href="#icon-arrow-up" />
+                        </svg> Currently leveling up: Tailwind CSS</span> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROCESS (new) ================= -->
+        <section id="process" class="process-dark">
+            <svg class="process-curves" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M0,380 C250,180 420,480 700,300 C900,180 1050,340 1200,220" stroke="rgba(255,255,255,.10)"
+                    stroke-width="2" fill="none" />
+                <path d="M0,120 C220,320 460,60 720,240 C920,370 1040,140 1200,260" stroke="rgba(6,214,160,.16)"
+                    stroke-width="2" fill="none" />
+                <path d="M0,260 C260,60 520,340 780,120 C960,-20 1080,220 1200,80" stroke="rgba(214,41,74,.22)"
+                    stroke-width="2" fill="none" />
+            </svg>
+            <div class="process-nebula nebula-1"></div>
+            <div class="process-nebula nebula-2"></div>
+            <div class="twinkle-stars" id="twinkleStars"></div>
+            <div class="container position-relative">
+                <div class="text-center mx-auto" style="max-width:600px;" data-aos="fade-up">
+                    <div class="section-eyebrow justify-content-center process-eyebrow"><span class="eyebrow-num">05</span>How I Work
+                    </div>
+                    <h2 class="section-title process-title">From Brief to Live Site</h2>
+                    <p class="section-sub mx-auto process-sub">The same process behind every one of my 35+ shipped projects.
+                    </p>
+                </div>
+                <div class="row g-4 mt-4">
+                    <div class="col-6 col-lg-3 process-col" data-aos="fade-up" data-aos-delay="0">
+                        <div class="process-step">
+                            <div class="process-line"></div>
+                            <div class="process-num"><svg class="icon">
+                                    <use href="#icon-search" />
+                                </svg></div>
+                            <h5>1. Discover</h5>
+                            <p>Understand client requirements, goals, and target users in detail.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 process-col" data-aos="fade-up" data-aos-delay="100">
+                        <div class="process-step">
+                            <div class="process-line"></div>
+                            <div class="process-num"><svg class="icon">
+                                    <use href="#icon-edit" />
+                                </svg></div>
+                            <h5>2. Design</h5>
+                            <p>Plan responsive layouts and UI that match the brand and content.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 process-col" data-aos="fade-up" data-aos-delay="200">
+                        <div class="process-step">
+                            <div class="process-line"></div>
+                            <div class="process-num"><svg class="icon">
+                                    <use href="#icon-code" />
+                                </svg></div>
+                            <h5>3. Build</h5>
+                            <p>Develop with HTML5, CSS3, JS, Bootstrap 5, or WordPress/ WooCommerce.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3 process-col" data-aos="fade-up" data-aos-delay="300">
+                        <div class="process-step">
+                            <div class="process-num"><svg class="icon">
+                                    <use href="#icon-rocket" />
+                                </svg></div>
+                            <h5>4. Optimize &amp; Deploy</h5>
+                            <p>Tune Core Web Vitals, test cross-browser, and deploy live via cPanel/FTP.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= WORK / PROJECTS ================= -->
+        <section id="work">
+            <div class="container">
+                <div class="text-center mx-auto" style="max-width:600px;" data-aos="fade-up">
+                    <div class="section-eyebrow justify-content-center"><span class="eyebrow-num">06</span>Featured Projects
+                    </div>
+                    <h2 class="section-title">Projects Worth Highlighting</h2>
+                    <p class="section-sub mx-auto">The strongest picks from 35+ production sites — real businesses, real users, real results. Browse the full archive below.</p>
+                </div>
+                <div class="row g-4 mt-4">
+
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                        <div class="project-card">
+                            <div class="proj-browser-bar">
+                                <span class="bdot" style="background:#FF5F57;"></span><span class="bdot" style="background:#FEBC2E;"></span><span class="bdot" style="background:#28C840;"></span>
+                                <span class="purl">metrocitypropertysolutions.com</span>
+                            </div>
+                            <div class="proj-thumb" style="background:linear-gradient(135deg,#4A5CF2,#22B39A);">
+                                <span><svg class="icon d-block mx-auto mb-2" style="width:1.8rem;height:1.8rem;">
+                                        <use href="#icon-home" />
+                                    </svg>Metro City Property Solutions</span>
+                                <span class="live-mini"><span class="pulse-dot"></span>LIVE</span>
+                            </div>
+                            <div class="proj-body">
+                                <div class="proj-cat">Real Estate · WordPress</div>
+                                <h5>Metro City Property Solutions</h5>
+                                <p>Responsive property showcase with lead-generation inquiry forms across 5+ custom pages.
+                                </p>
+                                <div class="proj-metric"><svg class="icon">
+                                        <use href="#icon-trending-up" />
+                                    </svg>+35% customer inquiries</div>
+                                <div class="proj-tech">
+                                    <span>WordPress</span><span>Elementor</span><span>Responsive</span>
+                                </div>
+                                <a href="https://metrocitypropertysolutions.com/" target="_blank" rel="noopener" class="proj-link">Visit
+                                    Live Site <svg class="icon">
+                                        <use href="#icon-arrow-up-right" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-card">
+                            <div class="proj-browser-bar">
+                                <span class="bdot" style="background:#FF5F57;"></span><span class="bdot" style="background:#FEBC2E;"></span><span class="bdot" style="background:#28C840;"></span>
+                                <span class="purl">labelpavishka.com</span>
+                            </div>
+                            <div class="proj-thumb" style="background:linear-gradient(135deg,#FFB703,#E08E00);">
+                                <span><svg class="icon d-block mx-auto mb-2" style="width:1.8rem;height:1.8rem;">
+                                        <use href="#icon-bag" />
+                                    </svg>LabelPavishka.com</span>
+                                <span class="live-mini"><span class="pulse-dot"></span>LIVE</span>
+                            </div>
+                            <div class="proj-body">
+                                <div class="proj-cat">E-commerce · WooCommerce</div>
+                                <h5>LabelPavishka.com</h5>
+                                <p>WooCommerce store with a 100+ product catalog and an integrated secure checkout flow.
+                                </p>
+                                <div class="proj-metric"><svg class="icon">
+                                        <use href="#icon-trending-up" />
+                                    </svg>−60% checkout time</div>
+                                <div class="proj-tech">
+                                    <span>WooCommerce</span><span>WordPress</span><span>Payments</span>
+                                </div>
+                                <a href="https://labelpavishka.com" target="_blank" rel="noopener" class="proj-link">Visit Live Site
+                                    <svg class="icon">
+                                        <use href="#icon-arrow-up-right" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-card">
+                            <div class="proj-browser-bar">
+                                <span class="bdot" style="background:#FF5F57;"></span><span class="bdot" style="background:#FEBC2E;"></span><span class="bdot" style="background:#28C840;"></span>
+                                <span class="purl">careerdirection.co.in</span>
+                            </div>
+                            <div class="proj-thumb" style="background:linear-gradient(135deg,#3444D6,#6C7688);">
+                                <span><svg class="icon d-block mx-auto mb-2" style="width:1.8rem;height:1.8rem;">
+                                        <use href="#icon-pin" />
+                                    </svg>careerdirection.co.in</span>
+                                <span class="live-mini"><span class="pulse-dot"></span>LIVE</span>
+                            </div>
+                            <div class="proj-body">
+                                <div class="proj-cat">Career Services · WordPress</div>
+                                <h5>Career Direction</h5>
+                                <p>Career guidance platform with 20+ custom pages, fully responsive across every device.
+                                </p>
+                                <div class="proj-metric"><svg class="icon">
+                                        <use href="#icon-trending-up" />
+                                    </svg>100% mobile usability</div>
+                                <div class="proj-tech"><span>WordPress</span><span>20+
+                                        Pages</span><span>Mobile-First</span></div>
+                                <a href="https://careerdirection.co.in" target="_blank" rel="noopener" class="proj-link">Visit Live Site
+                                    <svg class="icon">
+                                        <use href="#icon-arrow-up-right" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ALL PROJECTS GALLERY ================= -->
+        <section id="gallery" style="background:#FFF9F0;">
+            <div class="container">
+                <div class="text-center mx-auto" style="max-width:600px;" data-aos="fade-up">
+                    <div class="section-eyebrow justify-content-center"><span class="eyebrow-num">07</span>Full Archive
+                    </div>
+                    <h2 class="section-title">All Projects</h2>
+                    <p class="section-sub mx-auto">Filter by category to see the range of work I've delivered.</p>
+                </div>
+
+                <div class="gallery-filters" data-aos="fade-up" data-aos-delay="100">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="static">Static Websites</button>
+                    <button class="filter-btn" data-filter="dynamic">Dynamic Websites</button>
+                    <button class="filter-btn" data-filter="woocommerce">WooCommerce Websites</button>
+                    <button class="filter-btn" data-filter="construction">Construction Websites</button>
+                </div>
+
+                <div class="row g-4 mt-2" id="galleryGrid">
+
+                    <div class="col-md-6 col-lg-4 gallery-item" data-category="dynamic" data-aos="fade-up" data-aos-delay="0">
+                        <div class="gallery-card">
+                            <div class="gallery-thumb" style="background:linear-gradient(135deg,var(--indigo-deep),var(--indigo));">
+                                <svg class="icon" style="width:2rem;height:2rem;">
+                                    <use href="#icon-home" />
+                                </svg>
+                            </div>
+                            <div class="gallery-body">
+                                <span class="gallery-tag">Dynamic</span>
+                                <h6>Metro City Property Solutions</h6>
+                                <p>Real estate showcase &amp; lead-gen · WordPress</p>
+                                <a href="https://metrocitypropertysolutions.com/" target="_blank" rel="noopener">Visit
+                                    site <svg class="icon">
+                                        <use href="#icon-arrow-up-right" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 gallery-item" data-category="woocommerce" data-aos="fade-up" data-aos-delay="50">
+                        <div class="gallery-card">
+                            <div class="gallery-thumb" style="background:linear-gradient(135deg,#FFB703,#E08E00);">
+                                <svg class="icon" style="width:2rem;height:2rem;">
+                                    <use href="#icon-bag" />
+                                </svg>
+                            </div>
+                            <div class="gallery-body">
+                                <span class="gallery-tag tag-wc">WooCommerce</span>
+                                <h6>LabelPavishka.com</h6>
+                                <p>100+ product catalog · secure checkout</p>
+                                <a href="https://labelpavishka.com" target="_blank" rel="noopener">Visit site <svg
+                                        class="icon">
+                                        <use href="#icon-arrow-up-right" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 gallery-item" data-category="dynamic" data-aos="fade-up" data-aos-delay="100">
+                        <div class="gallery-card">
+                            <div class="gallery-thumb" style="background:linear-gradient(135deg,var(--indigo-deep),#6C7688);">
+                                <svg class="icon" style="width:2rem;height:2rem;">
+                                    <use href="#icon-pin" />
+                                </svg>
+                            </div>
+                            <div class="gallery-body">
+                                <span class="gallery-tag">Dynamic</span>
+                                <h6>Career Direction</h6>
+                                <p>20+ page career guidance platform · WordPress</p>
+                                <a href="https://careerdirection.co.in" target="_blank" rel="noopener">Visit site <svg
+                                        class="icon">
+                                        <use href="#icon-arrow-up-right" />
+                                    </svg></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 gallery-item" data-category="dynamic" data-aos="fade-up" data-aos-delay="150">
+                        <div class="gallery-card">
+                            <div class="gallery-thumb" style="background:linear-gradient(135deg,#3E4657,#6C7688);">
+                                <svg class="icon" style="width:2rem;height:2rem;">
+                                    <use href="#icon-tool" />
+                                </svg>
+                            </div>
+                            <div class="gallery-body">
+                                <span class="gallery-tag">Dynamic</span>
+                                <h6>Astro Tech Flow Control</h6>
+                                <p>Control valve manufacturer · WordPress &amp; Elementor</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 gallery-item" data-category="dynamic" data-aos="fade-up" data-aos-delay="200">
+                        <div class="gallery-card">
+                            <div class="gallery-thumb" style="background:linear-gradient(135deg,var(--indigo),#A81736);">
+                                <svg class="icon" style="width:2rem;height:2rem;">
+                                    <use href="#icon-layout" />
+                                </svg>
+                            </div>
+                            <div class="gallery-body">
+                                <span class="gallery-tag">Dynamic</span>
+                                <h6>Arjun College of Technology</h6>
+                                <p>College website · WordPress, Elementor &amp; Astra</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 gallery-item" data-category="construction static" data-aos="fade-up" data-aos-delay="250">
+                        <div class="gallery-card">
+                            <div class="gallery-thumb" style="background:linear-gradient(135deg,#1C1C1C,#B8860B);">
+                                <svg class="icon" style="width:2rem;height:2rem;">
+                                    <use href="#icon-tool" />
+                                </svg>
+                            </div>
+                            <div class="gallery-body">
+                                <span class="gallery-tag tag-construction">Construction</span><span class="gallery-tag">Static</span>
+                                <h6>Hi-Time Metal Art Work</h6>
+                                <p>Black &amp; gold Bootstrap 5 design system</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 gallery-item" data-category="construction static" data-aos="fade-up" data-aos-delay="300">
+                        <div class="gallery-card">
+                            <div class="gallery-thumb" style="background:linear-gradient(135deg,#1C1C1C,#B8860B);">
+                                <svg class="icon" style="width:2rem;height:2rem;">
+                                    <use href="#icon-tool" />
+                                </svg>
+                            </div>
+                            <div class="gallery-body">
+                                <span class="gallery-tag tag-construction">Construction</span><span class="gallery-tag">Static</span>
+                                <h6>Hi-Time Steels</h6>
+                                <p>Black &amp; gold Bootstrap 5 design system</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <p class="text-center mt-4 mb-0" style="font-size:.85rem; color:var(--slate);" data-aos="fade-up">
+                    Showing 7 of 45+ live projects — <a href="#contact" style="color:var(--indigo-deep); font-weight:600; text-decoration:none;">ask
+                        for the full list</a>.</p>
+            </div>
+        </section>
+
+        <!-- ================= CONNECT ================= -->
+        <section id="connect" style="background:#F0FAF7;">
+            <div class="container">
+                <div class="text-center mx-auto" style="max-width:600px;" data-aos="fade-up">
+                    <div class="section-eyebrow justify-content-center"><span class="eyebrow-num">08</span>Elsewhere
+                    </div>
+                    <h2 class="section-title">Connect With Me</h2>
+                    <p class="section-sub mx-auto">Find my code, my network, and the fastest way to reach me.</p>
+                </div>
+                <div class="row g-4 mt-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+                        <a href="https://www.linkedin.com/in/srinivasan-ravichandran-a5a842311" target="_blank" rel="noopener" class="social-card">
+                            <div class="social-icon" style="background:#0A66C2;">in</div>
+                            <div>
+                                <div class="s-title">LinkedIn</div>
+                                <div class="s-sub">Professional profile</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <a href="https://github.com/srinivasan0328" target="_blank" rel="noopener" class="social-card">
+                            <div class="social-icon" style="background:#171515;"><svg class="icon icon-filled" style="width:1.4rem;height:1.4rem;">
+                                    <use href="#icon-github" />
+                                </svg></div>
+                            <div>
+                                <div class="s-title">GitHub</div>
+                                <div class="s-sub">Code &amp; repositories</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <a href="mailto:srinivasanakash0328@gmail.com" class="social-card">
+                            <div class="social-icon" style="background:var(--indigo);"><svg class="icon">
+                                    <use href="#icon-mail" />
+                                </svg></div>
+                            <div>
+                                <div class="s-title">Email</div>
+                                <div class="s-sub">srinivasanakash0328@gmail.com</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <a href="tel:+919600619746" class="social-card">
+                            <div class="social-icon" style="background:#0A9E78;"><svg class="icon">
+                                    <use href="#icon-phone" />
+                                </svg></div>
+                            <div>
+                                <div class="s-title">Phone</div>
+                                <div class="s-sub">+91 96006 19746</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT FORM ================= -->
+        <section id="contact">
+            <div class="container">
+                <div class="contact-wrap p-4 p-lg-5" data-aos="zoom-in">
+                    <span class="bubble b1"></span>
+                    <span class="bubble b2"></span>
+                    <span class="bubble b3"></span>
+                    <span class="bubble b4"></span>
+                    <span class="bubble b5"></span>
+                    <span class="bubble b6"></span>
+                    <div class="row gy-4">
+                        <div class="col-lg-5 text-white">
+                            <div class="section-eyebrow" style="color:#fff;"><span class="eyebrow-num" style="color:rgba(255,255,255,.55);">09</span>Get In Touch</div>
+                            <h2 class="section-title text-white">Let's build something that ships.</h2>
+                            <p style="color:rgba(255,255,255,.82); max-width:420px;">Open to Front-End Developer roles in the UAE and beyond. Send a message and I'll reply within a day.</p>
+                            <div class="d-flex align-items-center gap-2 mt-4" style="color:rgba(255,255,255,.85); font-family:var(--font-mono); font-size:.85rem;">
+                                <span class="pulse-dot"></span> Usually replies within 24 hours
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <form id="contactForm" novalidate>
+                                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control form-control-custom" id="fName" name="name" placeholder="Your name" required minlength="2">
+                                        <div class="invalid-feedback-custom">Please enter your name (min 2 characters).
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control form-control-custom" id="fEmail" name="email" placeholder="Your email" required>
+                                        <div class="invalid-feedback-custom">Please enter a valid email address.</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control form-control-custom" id="fSubject" name="subject" placeholder="Subject" required minlength="3">
+                                        <div class="invalid-feedback-custom">Please add a short subject.</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control form-control-custom" id="fMessage" name="message" rows="4" placeholder="Tell me about the role or project..." required minlength="10"></textarea>
+                                        <div class="invalid-feedback-custom">Message should be at least 10 characters.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn-submit" id="submitBtn">
+                                            <span id="submitBtnText">Send Message</span>
+                                            <svg class="icon">
+                                                <use href="#icon-send" />
+                                            </svg>
+                                        </button>
+                                        <div id="formStatus"></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-md-4 text-center text-lg-start">
+                    <div class="footer-brand"><span style="color:var(--teal);">●</span> Srinivasan.dev</div>
+                    <p class="mt-2 mb-0" style="font-size:.85rem;">Front-End Developer building fast, responsive WordPress &amp; WooCommerce websites.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a href="#home" class="d-block mb-1">Home</a>
+                    <a href="#work" class="d-block mb-1">Work</a>
+                    <a href="#contact" class="d-block">Contact</a>
+                </div>
+                <div class="col-md-4 text-center text-md-end footer-social">
+                    <a href="https://www.linkedin.com/in/srinivasan-ravichandran-a5a842311" target="_blank" rel="noopener">in</a>
+                    <a href="https://github.com/srinivasan0328" target="_blank" rel="noopener"><svg
+                            class="icon icon-filled" style="width:1.1rem;height:1.1rem;">
+                            <use href="#icon-github" />
+                        </svg></a>
+                    <a href="mailto:srinivasanakash0328@gmail.com"><svg class="icon"
+                            style="width:1.1rem;height:1.1rem;">
+                            <use href="#icon-mail" />
+                        </svg></a>
+                </div>
+            </div>
+            <hr class="footer-divider my-4">
+            <div class="text-center" style="font-size:.8rem;">
+                © <span id="year"></span> Srinivasan Ravichandran. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING BUTTONS ================= -->
+    <div class="fab-stack">
+        <a href="https://wa.me/919600619746?text=Hi%20Srinivasan%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener" class="fab fab-whatsapp fab-pulse" aria-label="Chat on WhatsApp">
+            <svg class="icon icon-filled" style="width:1.5rem;height:1.5rem;">
+                <use href="#icon-whatsapp" />
+            </svg>
+            <span class="fab-tooltip">Chat on WhatsApp</span>
+        </a>
+        <a href="tel:+919600619746" class="fab fab-call" aria-label="Call Srinivasan">
+            <svg class="icon" style="width:1.35rem;height:1.35rem;">
+                <use href="#icon-phone" />
+            </svg>
+            <span class="fab-tooltip">Call me</span>
+        </a>
+        <a href="mailto:srinivasanakash0328@gmail.com" class="fab fab-email" aria-label="Email Srinivasan">
+            <svg class="icon" style="width:1.35rem;height:1.35rem;">
+                <use href="#icon-mail" />
+            </svg>
+            <span class="fab-tooltip">Email me</span>
+        </a>
+    </div>
+
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg class="icon" style="width:1.3rem;height:1.3rem;">
+            <use href="#icon-arrow-up" />
+        </svg>
+    </button>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <script src="/assets/main.js"></script>
+
+</body>
+
+</html>
